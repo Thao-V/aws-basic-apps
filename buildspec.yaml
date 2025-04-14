@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies for the backend app...
+      - cd backend                    # Navigate to the backend directory
+      - npm install                   # Install Node.js dependencies for the backend
+  build:
+    commands:
+      - echo "No build step required for simple Node.js app"
+  post_build:
+    commands:
+      - echo "Backend app build complete"
+artifacts:
+  files:
+    - '**/*'                          # Include all files in the backend directory
+  base-directory: backend              # Specify the base directory as the backend folder
